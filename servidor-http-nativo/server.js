@@ -10,8 +10,10 @@ server.on('request', (req, res) => {
  console.log(`Requisição Recebida!  ${req.method} ${req.url}`);
 
  res.statusCode = 200
- res.setHeader('Content-Type', 'aplication/json');
- res.end(JSON.stringify({status: "ok"}));
+ res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+ res.end("Servidor Funcionando!")
+ //se essa linha não existisse, não iria aparecer a mensagem que digitamos, não apareceria a resposta,
+ // e ai não saberiamos se funcionou ou não, porque o servidor iria ficar carregando para sempre.
 });
 
 server.listen(porta, () => {
